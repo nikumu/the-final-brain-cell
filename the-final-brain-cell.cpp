@@ -7,7 +7,7 @@ using namespace std;
 void printWelcomeMessage()
 {
     cout << "========================================\n";
-    cout << "         Welcome to Final Brain Cell!   \n";
+    cout << "         Welcome to The Final Brain Cell!   \n";
     cout << "========================================\n";
     cout << "Guess the number before you lose all your brain cells!\n\n";
 }
@@ -101,7 +101,7 @@ int main()
         }
     }
 
-    cout << "Game Over! Thanks for playing Final Brain Cell.\n";
+    cout << "Game Over! Thanks for playing The Final Brain Cell.\n";
 
     return 0;
 }
