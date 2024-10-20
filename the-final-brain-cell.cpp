@@ -2,6 +2,13 @@
 #include <cstdlib>
 #include <ctime>
 
+#define COLOR_GREEN "\x1b[32m"
+#define COLOR_YELLOW "\x1b[33m"
+#define COLOR_RED "\x1b[31m"
+#define COLOR_BLUE "\x1b[34m"
+#define COLOR_CYAN "\x1b[36m"
+#define COLOR_RESET "\x1b[0m"
+
 using namespace std;
 
 void printWelcomeMessage()
@@ -22,11 +29,12 @@ void chooseDifficulty(int &maxNumber, int &attemptsLeft)
 {
     int choice;
     cout << "Choose your difficulty level:\n";
-    cout << "1. Easy (Number between 1 and 10, 7 attempts)\n";
-    cout << "2. Medium (Number between 1 and 20, 5 attempts)\n";
-    cout << "3. Hard (Number between 1 and 50, 3 attempts)\n";
-    cout << "Enter your choice (1, 2, or 3): ";
+    cout << COLOR_GREEN "1. Easy (Number between 1 and 10, 7 attempts)\n" COLOR_RESET;
+    cout << COLOR_YELLOW "2. Medium (Number between 1 and 20, 5 attempts)\n" COLOR_RESET;
+    cout << COLOR_RED "3. Hard (Number between 1 and 50, 3 attempts)\n" COLOR_RESET;
+    cout << "Enter your choice (1, 2, or 3): " COLOR_CYAN;
     cin >> choice;
+    cout << COLOR_RESET;
 
     switch (choice)
     {
@@ -43,7 +51,7 @@ void chooseDifficulty(int &maxNumber, int &attemptsLeft)
         attemptsLeft = 3;
         break;
     default:
-        cout << "Invalid choice. Defaulting to Medium difficulty.\n";
+        cout << "Invalid choice. Defaulting to " COLOR_YELLOW "Medium" COLOR_RESET " difficulty.\n";
         maxNumber = 50;
         attemptsLeft = 5;
     }
@@ -68,14 +76,15 @@ int main()
 
     while (attemptsLeft > 0)
     {
-        cout << "Enter your guess: ";
+        cout << "Enter your guess: " COLOR_CYAN;
         cin >> guess;
+        cout << COLOR_RESET;
 
         if (guess == secretNumber)
         {
-            cout << "Congratulations! You've guessed the correct number!\n";
+            cout << COLOR_BLUE "Congratulations! You've guessed the correct number!\n";
             int score = calculateScore(attemptsLeft, maxAttempts);
-            cout << "Your score: " << score << " points\n";
+            cout << "Your score: " << score << " points\n" COLOR_RESET;
             break;
         }
         else if (guess < secretNumber)
