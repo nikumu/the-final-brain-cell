@@ -51,7 +51,7 @@ void chooseDifficulty(int &maxNumber, int &attemptsLeft)
         attemptsLeft = 3;
         break;
     default:
-        cout << "Invalid choice. Defaulting to " COLOR_YELLOW "medium" COLOR_RESET " difficulty.\n";
+        cout << "Invalid choice. Defaulting to " COLOR_YELLOW "Medium" COLOR_RESET " difficulty.\n";
         maxNumber = 50;
         attemptsLeft = 5;
     }
