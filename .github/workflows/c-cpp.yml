@@ -14,4 +14,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build
-      run: g++ the-final-brain-cell.cpp -o the-final-brain-cell
+      run: c++ the-final-brain-cell.cpp -o the-final-brain-cell
